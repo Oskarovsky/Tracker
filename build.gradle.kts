@@ -13,14 +13,19 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
 	mavenCentral()
+	maven {
+		url = uri("https://plugins.gradle.org/m2/")
+	}
 }
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.data:spring-data-redis")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
+	implementation("org.springframework.boot:spring-boot-gradle-plugin:3.0.1")
+	implementation("org.springframework.data:spring-data-redis")
 
+	implementation("se.transmode.gradle:gradle-docker:1.2")
 	implementation("redis.clients:jedis")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
